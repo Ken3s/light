@@ -10,7 +10,7 @@ def reader():
 
     c=0
     for line in lines1:
-        print line
+        # print line
         list.insert(c,line)
         c = c + 1
 
