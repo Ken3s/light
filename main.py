@@ -1,17 +1,18 @@
-f = open('influenceKC111FL.csv')
-data1 = f.read()
-f.close()
+from light import *
+from Reader import *
 
-lines2 = data1.split('n')
-lines1 = data1.split(',')
+def main():
+    data = []
+    light = []
+    data = reader()
 
-list = []
+    # for num in range(15):
+    #     light[num] = Light(light[num],num)
+    #print list[1]
 
-c=0
-for line in lines1:
-    # print line
-    list.insert(c,line)
-    c = c + 1
+if __name__=='__main__':
+    main()
+
 
 # print list[1]
 # for w in list:
