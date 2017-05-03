@@ -41,12 +41,12 @@ def main():
         sensor.append(Sensor(num,lx,hlx))
 
     #目標照度設定
-    locationa = 21
-    locationb = 79
+    locationa = 9
+    locationb = 72
     locationc = 96
     sensor[locationa].set_lx(500);
-    sensor[locationb].set_lx(500);
-    sensor[locationc].set_lx(500);
+    sensor[locationb].set_lx(750);
+    sensor[locationc].set_lx(1000);
     # print light[0].hcd
     # print data[1]
 
@@ -63,7 +63,7 @@ def main():
         s = 0
 
         for i in range(LIGHT_NUM):
-            light[i].cd = random.randint(0,1000)
+            light[i].cd = random.randint(0,2000)
 
         #照度，光度変換
         for j in range(SENSOR_NUM):
@@ -81,13 +81,13 @@ def main():
             # print(i)
             # print (g[i])
 
-        for i in range(LIGHT_NUM):
-            P += light[i].cd
-        for i in range(SENSOR_NUM):
-            s += g[i]
-        f = P + Weight * s
+                for j in range(LIGHT_NUM):
+                    P += light[j].cd
+                for j in range(SENSOR_NUM):
+                    s += g[j]
+                f = P + Weight * s
 
-        # print (f)
+                # print (f)
         if COUNT == 0:
             min = f
             for i in range(LIGHT_NUM):
@@ -106,10 +106,10 @@ def main():
 
     # 最小値の時のセンサと照明の値
     for i in range(LIGHT_NUM):
-        print (minlight[i])
+        print ('照明{0}：{1}cd'.format(i,minlight[i]))
     for i in range(SENSOR_NUM):
         if i ==locationa or i == locationb or i == locationc:
-            print(minsensor[i])
+            print('センサ{0}：照度{1}Lx'.format(i,minsensor[i]))
 
 if __name__=='__main__':
     main()
