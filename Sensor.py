@@ -3,3 +3,5 @@ class Sensor:
         self.num = num
         self.lx = lx
         self.hlx= hlx
+    def set_lx(self,hlx):
+        self.hlx=hlx
