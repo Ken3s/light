@@ -9,6 +9,7 @@ def main():
     data = []#データ配列
     light = []
     sensor = []
+
     cd = 0
     lx = 0
     hcd = 50
@@ -27,6 +28,10 @@ def main():
     #照明の値変更
     # Light.setcd(light[1])
     # print light[1].cd
+
+    for i in range(15):
+        sensor[0].lx = light[i].cd * data[17+i]
+
 
 if __name__=='__main__':
     main()
